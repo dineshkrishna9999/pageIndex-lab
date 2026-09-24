@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/python:3.12-bookworm
+FROM mcr.microsoft.com/devcontainers/python:3.14-trixie
 
 ENV DEBIAN_FRONTEND=noninteractive
 
