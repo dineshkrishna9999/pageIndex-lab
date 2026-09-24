@@ -55,7 +55,7 @@ Index sample_pdfs/pageindex_demo.pdf and summarize it.
 ```text
 settings.py      load llm from .env
 agent/           ADK agent + PageIndex tools
-sample_pdfs/     sample PDF
+sample_pdfs/     demo PDF (+ optional local docs)
 assets/          README diagram
 .env.example
 ```

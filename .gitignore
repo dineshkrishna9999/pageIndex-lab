@@ -22,7 +22,9 @@ build/
 .pageindex/
 __pycache__/
 
-# Samples (keep the bundled demo PDF)
-sample_pdfs/*.pdf
+# Samples — only the tiny public demo PDF is tracked.
+# Put your own docs under sample_pdfs/ (they stay local).
+sample_pdfs/**/*.pdf
 !sample_pdfs/pageindex_demo.pdf
 !sample_pdfs/pageindex_demo.md
+sample_pdfs/linq-cloud/
