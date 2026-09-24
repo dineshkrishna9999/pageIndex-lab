@@ -21,21 +21,8 @@ PageIndex:   PDF → section tree → agent picks pages → read those pages
 
 ```bash
 uv sync
-cp .env.example .env   # fill in llm (api_version >= 2025-03-01-preview)
+cp .env.example .env   # fill in llm and update it(api_version >= 2025-03-01-preview)
 ```
-
-In the Dev Container, `poe` is aliased to `uv run poe`. Locally you can add:
-
-```bash
-alias poe='uv run poe'
-```
-
-### `.env`
-
-```bash
-llm={"model_name": "azure/gpt-4.1", "provider_args": {"api_key": "...", "api_base": "https://....openai.azure.com", "api_version": "2025-03-01-preview"}}
-```
-
 `model_name` is a LiteLLM string. Swap provider as needed.
 
 ## Try
