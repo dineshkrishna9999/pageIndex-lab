@@ -1,39 +1,49 @@
 [project]
-name = "vectorless-rag"
+name = "pageindex-lab"
 version = "0.1.0"
-description = "Exploring PageIndex — vectorless RAG with page-level context"
+description = "Try PageIndex locally with an ADK agent"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.14"
+license = { text = "MIT" }
 dependencies = [
     "google-adk",
-    "litellm>=1.82.0",
-    "pymupdf>=1.26.4",
-    "PyPDF2>=3.0.1",
-    "python-dotenv>=1.1.0",
-    "pyyaml>=6.0.2",
+    "pageindex>=0.2.19",
+    "pydantic-settings>=2.0.0",
 ]
 
-[project.optional-dependencies]
+[project.urls]
+Homepage = "https://github.com/dineshkrishna9999/pageIndex-lab"
+Repository = "https://github.com/dineshkrishna9999/pageIndex-lab"
+Issues = "https://github.com/dineshkrishna9999/pageIndex-lab/issues"
+
+[dependency-groups]
 dev = [
-    "poethepoet>=0.29.0",
-    "ruff>=0.9.0",
+    "mypy>=2.1.0",
+    "poethepoet>=0.48.0",
+    "ruff>=0.15.0",
 ]
 
 [tool.uv]
-dev-dependencies = [
-    "poethepoet>=0.29.0",
-    "ruff>=0.9.0",
-]
-
-[tool.poe.tasks]
-demo     = "python demo.py"
-lint     = "ruff check ."
-format   = "ruff format ."
-clean    = { shell = "find . -type d -name __pycache__ | xargs rm -rf" }
+package = false
 
 [tool.ruff]
-line-length = 100
-target-version = "py312"
+line-length = 88
+fix = true
+target-version = "py314"
 
 [tool.ruff.lint]
-select = ["E", "F", "I"]
+extend-select = ["I"]
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.mypy]
+strict = true
+python_version = "3.14"
+ignore_missing_imports = true
+disallow_untyped_defs = true
+warn_unused_ignores = false
+
+[tool.poe.tasks.agent]
+help = "Open the PageIndex agent in ADK web"
+cmd = "adk web"

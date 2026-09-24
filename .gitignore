@@ -1,41 +1,28 @@
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
 *.egg-info/
 dist/
 build/
-*.egg
 
-# Virtual environments
-venv/
+# Env / venv
 .venv/
-env/
-
-# Environment variables
 .env
 !.env.example
-!pageindex_agent/.env
 
-# IDE
+# IDE / OS
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
-
-# OS
 .DS_Store
-Thumbs.db
 
-# Project specific
-results/*.json
-logs/
-sample_pdfs/*.pdf
-
-# Type checking
+# Caches / local store
 .mypy_cache/
+.ruff_cache/
+.adk/
+.pageindex/
+__pycache__/
 
-# Jupyter
-.ipynb_checkpoints/
+# Samples (keep the bundled demo PDF)
+sample_pdfs/*.pdf
+!sample_pdfs/pageindex_demo.pdf
+!sample_pdfs/pageindex_demo.md
